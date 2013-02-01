@@ -738,7 +738,7 @@ $xStuff  = '<?xml version="1.0" ?><xml></xml>';
 $aData   = array();
 $oObject = new stdClass;
 $rSocket = fopen();
-
+-100 -5 -10 -999 -0
 function ($sString = "String", $iNumber = -1, $mMulti, $bTrue, $xStuff, $aData, $oObject, $rSock) {
 
 }
