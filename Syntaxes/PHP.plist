@@ -1185,7 +1185,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.variable.php</string>
+					<string>variable.other.php</string>
 				</dict>
 				<key>2</key>
 				<dict>
