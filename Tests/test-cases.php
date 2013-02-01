@@ -720,6 +720,9 @@ $_COOKIE
 $_FILES
 $argv
 $argc
+"{$_POST['hello']}"
+"{$_SERVER[0]}"
+"{$test[0]}"
 // semi-danger
 $_ENV
 $_SERVER
