@@ -681,8 +681,18 @@ if ($x <> 0) { }
 $arr = array(1, 2, 3);
 $arr = array(array(1, 2, 3), array(1, 2, 3));
 
+$Function = function () use ($hello) {
+    echo "Hello, World!";
+};
+
+$Function();
+
 $foo();
 $$foo();
+foo();
+\foo();
+\bar\foo();
+\dick\butts\sir\foo();
 
 if (true and false) {}
 if (true or (true and false)) {}
@@ -700,4 +710,24 @@ $blah = (array) $foo;
 $blah = (object) $foo;
 $blah = (unset) $foo;
 
+
+// superglobals
+// dangerous
+$_POST
+$_REQUEST
+$_GET
+$_COOKIE
+$_FILES
+$argv
+$argc
+// semi-danger
+$_ENV
+$_SERVER
+$_SESSION
+$GLOBALS
+
+// invalid docblock
+/**
+
+*/
 ?>
