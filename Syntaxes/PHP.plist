@@ -468,7 +468,14 @@
 					<string>(?x)
 							\s*(array) # Typehint
 							\s*(&amp;)? 					# Reference
-							\s*((\$+)[a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*) # The variable name
+							\s*(
+								 (\$+)
+								 (
+								  [simbxaor][A-Z][a-zA-Z0-9_\x{7f}-\x{ff}]*
+								  |
+								  [a-zA-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*
+								 )
+								) # The variable name
 							\s*(=)	# A default value
 							\s*(array)\s*(\()
 							</string>
@@ -3519,6 +3526,146 @@
 				</dict>
 			</array>
 		</dict>
+		<key>var_string</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)(\$+)s[A-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+					<key>name</key>
+					<string>variable.other.string.php</string>
+				</dict>
+			</array>
+		</dict>
+		<key>var_array</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)(\$+)a[A-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+					<key>name</key>
+					<string>variable.other.array.php</string>
+				</dict>
+			</array>
+		</dict>
+		<key>var_object</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)(\$+)o[A-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+					<key>name</key>
+					<string>variable.other.object.php</string>
+				</dict>
+			</array>
+		</dict>
+		<key>var_number</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)(\$+)i[A-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+					<key>name</key>
+					<string>variable.other.number.php</string>
+				</dict>
+			</array>
+		</dict>
+		<key>var_boolean</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)(\$+)b[A-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+					<key>name</key>
+					<string>variable.other.boolean.php</string>
+				</dict>
+			</array>
+		</dict>
+		<key>var_xml</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)(\$+)x[A-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+					<key>name</key>
+					<string>variable.other.xml.php</string>
+				</dict>
+			</array>
+		</dict>
+		<key>var_resource</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.php</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(?x)(\$+)r[A-Z_\x{7f}-\x{ff}][a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+					<key>name</key>
+					<string>variable.other.resource.php</string>
+				</dict>
+			</array>
+		</dict>
 		<key>var_basic</key>
 		<dict>
 			<key>patterns</key>
@@ -3533,9 +3680,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?x)
-        			            (\$+)[a-zA-Z_\x{7f}-\x{ff}]
-        			            [a-zA-Z0-9_\x{7f}-\x{ff}]*?\b</string>
+					<string>(?i)(\$+)[a-z_\x{7f}-\x{ff}][a-z0-9_\x{7f}-\x{ff}]*?\b</string>
 					<key>name</key>
 					<string>variable.other.php</string>
 				</dict>
@@ -3690,6 +3835,30 @@
 				<dict>
 					<key>include</key>
 					<string>#var_global_safer</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_string</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_boolean</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_xml</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_array</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#var_object</string>
 				</dict>
 				<dict>
 					<key>include</key>

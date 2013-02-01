@@ -729,6 +729,24 @@ $_SERVER
 $_SESSION
 $GLOBALS
 
+// camelCaseVariables
+$sString = "String Variable";
+$iNumber = 5;
+$mMulti  = false;
+$bTrue   = true;
+$xStuff  = '<?xml version="1.0" ?><xml></xml>';
+$aData   = array();
+$oObject = new stdClass;
+$rSocket = fopen();
+
+function ($sString = "String", $iNumber = -1, $mMulti, $bTrue, $xStuff, $aData, $oObject, $rSock) {
+
+}
+
+function ( array $aData, SimpleXMLElement $oData ) {
+
+}
+
 // invalid docblock
 /**
 
